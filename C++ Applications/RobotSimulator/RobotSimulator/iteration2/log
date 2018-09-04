@@ -1,0 +1,20 @@
+<<<<<<< HEAD
+Add accept to the sensor base class
+Creat a enum struct for entity type
+
+---11.8
+
+error: lose game in terminal means the battery is 0 
+
+11.10
+=======
+
+
+robot is freezon, but have collision with homebase. then its speed is still 0;
+
+
+
+
+
+
+>>>>>>> devel

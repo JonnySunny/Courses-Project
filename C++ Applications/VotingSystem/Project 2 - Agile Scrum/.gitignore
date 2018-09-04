@@ -1,0 +1,23 @@
+# Ignore compiled files
+*.o
+*.out
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Ignore build folders and executable
+build/*
+*/html
+Vote_Counter
+Unit_Tests
+
+# Report and log file
+*eport.*
+*.log
+testing/Ballot_Generator/*.csv
+
+# OS files
+.DS_Store*
+*.db

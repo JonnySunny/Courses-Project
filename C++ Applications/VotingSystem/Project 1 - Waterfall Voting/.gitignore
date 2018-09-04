@@ -1,0 +1,22 @@
+# Ignore compiled files
+*.o
+*.out
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Ignore build folders and executable
+build/*
+docs/html
+Vote_Counter
+Unit_Tests
+
+# Report and log file
+*eport.*
+*.log
+
+# OS files
+.DS_Store*
+*.db

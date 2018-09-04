@@ -1,0 +1,49 @@
+#Zhongyi Sun sunx0725 5320262
+
+# Execution begins at address 0
+	.pos 	0
+	irmovq 	Stack, %rsp  #stack 	
+	call	Main
+	halt
+# Example 
+.align 8
+# Source block
+src:
+        .quad 0x001
+        .quad 0x002
+        .quad 0x004
+# Destination block
+dest:
+        .quad 0x111
+        .quad 0x222
+        .quad 0x333
+
+
+Main:
+	irmovq	src , %rdi
+	irmovq	dest, %rsi 
+	irmovq	$3,   %r8 #len = 3
+	call copy
+	ret
+copy:
+	xorq	%rax, %rax #result = 0
+        irmovq	$1, %r10
+	irmovq	$8, %r12
+Loop:
+	andq	%r8, %r8 #whilew len>0
+	je	end 
+	mrmovq	(%rdi), %r9 # val = *src  r9:val
+	
+	addq	%r12, %rdi	
+	rmmovq	%r9, (%rsi)     # *dest= val
+	addq 	%r12, %rsi
+	rrmovq	%rsi, %r11
+	rrmovq	%r11, %rsi  
+	xorq	%r9 , %rax     #result = result^val
+	subq	%r10, %r8      #len--
+	jmp	Loop
+end:
+	ret
+
+	.pos 0x1000
+Stack:

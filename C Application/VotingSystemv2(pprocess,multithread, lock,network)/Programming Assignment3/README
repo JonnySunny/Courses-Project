@@ -1,0 +1,42 @@
+/************************************************
+* login:   sunx0458        sunx0725
+* name:    Connor C Sun    Zhongyi Sun
+* id:      5116486         5320262 
+* section: 10 T TH 11:15 - 12:30
+* date:    04/10/18   
+* Extra Credit: No
+*************************************************/
+
+-------------------------------------------------
+Purpose:
+To count and sum the votes from different layers. For example, there're subcounty, county and region, 3 layers. so the program will count the subcouty first and then put in couty, then count then put on region, then count region, and find the winner at last.
+
+
+-------------------------------------------------
+To compile the program and usage:
+Since there's a makefile. so just type "make" in terminal. 
+and then input tree arguments such as  ./votecounter input.txt inputdir outputdir
+
+
+-------------------------------------------------
+What the program does:
+First of all, read the input.txt. Knowing the relation of each node, and then build directrories according to this structure.
+Then, we created numer of leaf thread to run our main functionality, which is to find the winner in those files.
+There are three functions that are included in a function called "childthread". Thread needs to run those functions to get the result. 
+LogStart and LogEnd function are used to record the thread id and correspnded name each thread takes over.
+The Decry function is used to decipher the files which are provided in the inputdir.
+The aggregate function is used to merge all non-leaf node file correctly, and we can find the winner in the text file of the root directory.
+We use lock in the aggregate function to control the writing and reading between threads.
+
+
+-----------------------------
+
+Did not do extra credit
+
+
+--------------------------------
+
+Contribution:
+
+Zhongyi Sun : log related functions, aggregate files related functions and so on.
+Connor C Sun: makefile, readme, decry related funtions, buildDir functions, and so on.

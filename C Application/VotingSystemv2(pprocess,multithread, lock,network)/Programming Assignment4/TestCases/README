@@ -1,0 +1,14 @@
+This server and client are under development. 
+They are a good guide on getting started, but may have lingering errors, which are being fixed over the next week.
+If you find an error, please email reproduction to <fulto081 AT umn.edu>
+
+There are two versions of the client and server. The ones with -debug appended to the name. server-debug
+prints out the current tree after each command on the server size. client-debug has a wait of two seconds 
+after each response from the server, to make testing for mutlithreading easier.
+
+For each test case, the dag file is entitled "voting_regions.dag"
+For each test case, the requests/command file is entitled "input.req"
+For each test case, all votes files have the .votes extension. 
+
+YOU CANNOT DEPEND ON ANY OF THESE FILENAMES. Simply accept command line input 
+for the dag and requests file, and trust what is in the requests file for votes files.

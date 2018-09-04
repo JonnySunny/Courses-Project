@@ -1,0 +1,13 @@
+Add_Region Who_Won Region_1
+Add_Region Who_Won Region_2
+Add_Region Region_2 County_2
+Add_Region Region_2 County_3
+Add_Region Region_1 County_1
+Add_Region County_3 Town_1
+Count_Votes Zaphod
+Count_Votes Who_Won
+Open_Polls Who_Won
+Add_Votes Town_1 a.votes
+Count_Votes Who_Won
+Close_Polls Who_Won
+Count_Votes Who_Won

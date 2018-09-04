@@ -1,0 +1,14 @@
+
+
+1.robot is freezon, but have collision with homebase and become to the superbot. then its speed is still 0;
+
+2.Probabaly the check collision function has issues.
+sometimes, robot or superbort cannot unfreeze the robot which is frezon when they have collision with each other.
+Sometimes, when plater have collieded with robot, but the robot will not stop at that time, and player just bounce off.
+Robot, player will have abnormal behavior when colided with wall
+
+3.proximity cannot work well all time, for example, when the robot detect the other obstablc is another robot but it doesn't distress, it still stay its heading angle for a while, then change the heading angle within the range of proximity (the previous has osme overlab in the current sensor).  and they just have collision without changing the angle. And moreover, sometimes, the robot is distressed, but the another roobot still avoids collision with it.
+
+4.hardcode for data for robots and number of robots. so when resetting them to the priginal state, it will just reset the current robots rather than resetting the new added robot
+
+

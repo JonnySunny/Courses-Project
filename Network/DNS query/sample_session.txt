@@ -1,0 +1,14 @@
+sunx0725@csel-kh4250-17:/home/sunx0725/csci4211/Python3 $ python3 DNSClientV3.py 
+Type in a domain name to query, or 'q' to quit:
+facebook.com
+Received: Root DNS:facebook.com:157.240.2.35
+Type in a domain name to query, or 'q' to quit:
+facebook.com
+Received: Local DNS:facebook.com:157.240.2.35
+Type in a domain name to query, or 'q' to quit:
+www.google.com
+Received: Root DNS:www.google.com:216.58.216.228
+Type in a domain name to query, or 'q' to quit:
+
+
+

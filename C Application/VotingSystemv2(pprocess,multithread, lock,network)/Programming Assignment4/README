@@ -1,0 +1,39 @@
+/************************************
+* login:   sunx0458        sunx0725
+* name:    Connor C Sun    Zhongyi Sun
+* id:      5116486         5320262 
+* date:    04/30/18
+* Did extra credit                             
+*************************************/
+
+Purpose
+--------------------------------------
+The purpose of this program is voting votes, which is similar with the other previous assignments. The different is we make it more reality, and using server and client to do it. So the server build the tree based on the giving DAG, and listen the command from clients and deal all the requests and sending back information back to clients. 
+
+Compiling and Usage
+-------------------------------------------------
+To compile the program: 
+Since there's a makefile. so just type "make" in terminal, and “make clean” to delete all the executable files.
+Usage:
+./server <DAG FILE> <SERVER PORT>
+./client <REQ FILE> <SERVER IP> <SERVER PORT>
+
+What the program does:
+-------------------------------------------------
+The server will build the tree based on the giving DAG FILE and listen on the SERVER PORT. The server will return winner, count votes, open poll, add votes, remove votes and close polls based on the commend from the client, then send back success if it’s successeful, and send useful error messages if it’s failed.   
+The clients will connect to SERVER PORT, and read the commands file, then send the command to server then get print out the return message from server. 
+
+
+Sections:
+--------------------------------------
+Connor C Sun:   Lecture Sec 10 T Th 11:15 - 12:30
+		Lab     Sec 14 M    14:30 - 15:20
+ZhongYi Sun:    Lecture Sec 10 T Th 11:15 - 12:30
+		Lab	Sec 15 M    15:35 - 14:25
+
+Contribution
+--------------------------------------
+
+Zhongyi Sun : server.c
+Conner C Sun  client.c makefile 
+

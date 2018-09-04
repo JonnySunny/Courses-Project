@@ -1,0 +1,149 @@
+
+Question1
+
+
+Base case: n = 0
+Pf: power 0 x = 1.0 //match n withp attern 0 -> 1.0, it'll return 1.0 for n = 0
+
+Inductive case: n = k+1 for some int k
+Pf: Assume n = k is true, given power k x.
+    Show power k+1 x = x *. power (k+1-1) x // since given power k x, we know power k+1 x = x *. power k x. That's, we show that power n x = x^n
+		    = x ^(k+1)
+
+
+
+
+----------
+Question2
+
+Principle of nat: for some n, f(n) is f(Zero) and f(n)=> f(Succ n)
+
+Base case: n = Zero
+Pf: toInt(Zero) = 0 //function take Zero, will return 0 
+    power Zero x = 1.0 //pattern match with Zero, return 1.0
+
+Inductive case: n = Succ n
+Pf: Given power n x = x^toInt(n) // Hypothesis
+    toInt(Succ n) = toInt n + 1 //def of toInt
+    power Succ n x = x *. power n x //def of power
+		   = x * x^toInt(n) //Hypothesis
+		   = x^(toInt(n) + 1)
+
+
+
+----------
+Question3
+
+Base case: l = []
+Pf: length ([] @ r) = length [] + length r //def length function
+		    = 0 + length r //def length (l @ r) = length l + length r
+		    = length r
+Inductive case : prove length(([h] @ t) @ l2) = (length h + length t) + length r 
+Pf:Given length (t @ l2) = length t + length l2 //hypotheisis
+   length( ([h] @ t) @ l2)  = length ([h] @ (t @ l2))  // by properties of lists
+			 = length h + (length l + length l2) //def of length (l @ r) = length l + length r
+			 = (length h + length t) + length r 
+
+
+
+
+---------
+Question4
+
+Base case: l = []
+Pf: reverse [] = [] //patern match with and return a []
+    length ([]) = 0 //def of length
+Inductive case: prove length ( reverse (h :: t) ) = length (h :: t) 
+						  = length ([h] @ t)
+						  = length h + length t 
+Pf: given : length (reverse t) = length t // hypothesis
+    reverse ( h :: t) = reverse t @ [h] // by def of reverse
+    length(reverse t @ [h]) = length t + length h //by last proof and hypotesis
+			    = length h + length t //by properties of addition
+
+
+
+
+
+---------
+Question5
+
+Base case: l1 = []
+Pf: reverse(append [] l2) = append(reverse l2) (reverse []) //by def of what to prove
+                          = append(reverse l2) [] //by def of reverse
+    reverse(l2)           = reverse(l2)           //by def of append
+
+Inductive case: to prove reverse (append (h::t) l2) = append (reverse l2) (reverse (h::t))
+Pf: Given reverse(append t l2) = append (reverse l2) (reverse t) //hypo
+    reverse(append (h::t) l2) = append (reverse l2) (reverse h :: t)
+    reverse(h :: (append t l2) = append (reverse l2) (reverse t) @ [h] // def of append and reverse
+    reverse(append t l2) @ [h] = append (reverse l2) (reverse t) @ [h]//def of append
+    reverse(append t l2) = append (reverse l2) (reverse t)//properties of list and hypo, thus we proved it.
+
+
+
+
+----------
+Question6
+
+Base case: l = []
+Pf: sorted [] => sorted (place e [])
+	true => sorted ([e]) // def of place
+	true => true //def sorted
+
+
+Inductive case: to prove (sorted (h::t) => sorted (place e (h::t)))
+Pf: Given sorted t => sorted (place e t) //as hypothesis
+    sorted (h::t) => sorted (place e (h::t))
+
+
+case 0 : sorted t is false, that's for any unsorted list, it will return true.
+
+
+case 1 :sorted t is true, and all elements in [h::t] are less than e
+    sorted (h::t) => sorted (h ::t) //def of place, which is true absolutly
+
+
+case 2 :sorted t is true, and there exits some element x is grater then e
+    sorted (h::t) => sorted (e::[h]@t)
+    we have hypothesis such that
+    sorted (h::t) => true //due to def of sorted.
+
+    
+
+
+
+
+----------
+Question7
+
+Base case: l = []
+Pf:  is_elem e (place e []) 
+     is_elem e [e] //by def of place
+     this will retrun true
+
+
+
+Inductive case: l =[h::t]
+Pf: Given is_elem e (place e t) as hypothesis
+    is_elem e (place e [h::t])
+
+
+
+case 1:all elements in [h::t] are not equal to e, and there exits x in the list such that it's less than s
+     is_elem e h::[e]@t//which muct be true, since there is e in the list
+
+case 2: all elements in [h::t] are not equal to e, and there doesn't exit x in the list such that it's less than s
+     is_elem e (place e h::t)
+     is_elem e h::t
+     due to our hypothesis is_elem e (place e t), there must exit some element in t such that equals to e. That's case 2 is true
+
+
+
+
+Fisrt, we have supposed that is_elem e (place e t), which means e must be added to list. Therefore, it's not required that l is sorted
+Next, sorted 1 is needed. Cause, we want to see if the list is sorted. only we have a sorted list, then we can compare or insert element in order. if not, the comparision is meaningless.
+
+
+ 
+      

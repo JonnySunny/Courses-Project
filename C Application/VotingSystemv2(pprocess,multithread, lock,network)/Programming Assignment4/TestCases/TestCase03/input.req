@@ -1,0 +1,9 @@
+Open_Polls Survey
+Add_Votes Minneapolis Minneapolis.votes
+Add_Votes Richfield Richfield.votes
+Add_Votes Bloomington Bloomington.votes
+Add_Votes Edina Edina.votes
+Add_Votes StPaul StPaul.votes
+Count_Votes HennipenCounty
+Close_Polls Survey
+Return_Winner 

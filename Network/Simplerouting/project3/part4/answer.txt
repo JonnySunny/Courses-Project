@@ -1,0 +1,17 @@
+Expected:
+Latency:
+L1, L2, L3 are the average RTTs(latency) we got from part 3.
+L1+L2+L3 = 86.453ms + 25.922ms +47.300ms = 159.675ms
+Throughput: 
+T1, T2, T3 are the throughputs(bandwidth) we got from part 3.
+T1+T2+T3 = 15.78MB/s + 16.7195MB/s + 15.209MB/s = 47.7085MB/s
+For average 47.7085MB/s / 3 = 15.9028MB/s
+
+
+Measured:
+
+RTT:(Latency) 155.530ms	
+Throughput: 13.529MB/s
+
+
+The difference between our expectations and the actual measured values are within a reasonable range, the difference in both cases may because of minor inner connection delay.

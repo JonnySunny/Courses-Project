@@ -1,0 +1,2 @@
+add ColorBtn into robot_view.h robot_viewer.cc
+add method and variables color_btn_ in robot_viewer.cc  

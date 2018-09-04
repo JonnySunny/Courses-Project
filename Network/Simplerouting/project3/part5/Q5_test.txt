@@ -1,0 +1,27 @@
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 h7 h8 
+h2 -> h1 h3 h4 h5 h6 h7 h8 
+h3 -> h1 h2 h4 h5 h6 h7 h8 
+h4 -> h1 h2 h3 h5 h6 h7 h8 
+h5 -> h1 h2 h3 h4 h6 h7 h8 
+h6 -> h1 h2 h3 h4 h5 h7 h8 
+h7 -> h1 h2 h3 h4 h5 h6 h8 
+h8 -> h1 h2 h3 h4 h5 h6 h7 
+*** Results: 0% dropped (56/56 received)
+mininet> net.hosts
+h1 h1-eth0:e1-eth1
+h2 h2-eth0:e1-eth2
+h3 h3-eth0:e2-eth1
+h4 h4-eth0:e2-eth2
+h5 h5-eth0:e3-eth1
+h6 h6-eth0:e3-eth2
+h7 h7-eth0:e4-eth1
+h8 h8-eth0:e4-eth2
+a1 lo:  a1-eth1:e1-eth3 a1-eth2:e2-eth3 a1-eth3:c1-eth1
+a2 lo:  a2-eth1:e3-eth3 a2-eth2:e4-eth3 a2-eth3:c1-eth2
+c1 lo:  c1-eth1:a1-eth3 c1-eth2:a2-eth3
+e1 lo:  e1-eth1:h1-eth0 e1-eth2:h2-eth0 e1-eth3:a1-eth1
+e2 lo:  e2-eth1:h3-eth0 e2-eth2:h4-eth0 e2-eth3:a1-eth2
+e3 lo:  e3-eth1:h5-eth0 e3-eth2:h6-eth0 e3-eth3:a2-eth1
+e4 lo:  e4-eth1:h7-eth0 e4-eth2:h8-eth0 e4-eth3:a2-eth2

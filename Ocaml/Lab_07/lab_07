@@ -1,0 +1,26 @@
+Rrove that is_elem e (insert e t)
+
+1.induction principle
+  t = Empty , is_elem e (insert e t)
+  t = Branch (t1, e', t2),  is_elem e (insert e t)
+	
+2.to prove the is_elem e (insert e t)
+
+3.base case: t = Empty
+	is_elem e (insert e Empty) = is_elem e (Branch (Empty, e, Empty))
+			       = true //match pattern 
+4.inductive case: t = Branch (t1, e', t2)
+	Hypothese : is_elem e (insert e t1) is_elem e (insert e t2)	
+  case1 : e = e' 
+	 is_elem e (insert e Branch (t1, e', t2)) = is_elem e Branch (t1, e', t2)
+				= true
+  case2 : e < e'   (*insert e t -> Branch (insert e t1, e', t2)*)
+	is_elem e (insert e Branch (t1, e', t2)) = is_elem e Branch (insert e t1, e', t2)
+                               = is_elem e insert e t1 //by hypo                       
+			       = true
+  case3 : e > e'   (* insert e t -> Branch (t1, e', insert e t2) *)
+	is_elem e (insert e t) = is_elem e Branch (t1, e', insert e t2)
+                               = is_elem e insert e t2 //by hypo
+			       = true
+
+5. Hypothese : is_elem e (insert e t1) is_elem e (insert e t2)	

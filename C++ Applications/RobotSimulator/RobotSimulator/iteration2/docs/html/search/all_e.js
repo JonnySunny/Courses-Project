@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['recharge_5fstation',['recharge_station',['../class_arena.html#a9bab90237dc1eef9f30fa53d7324d4b3',1,'Arena']]],
+  ['recharge_5fstation_2eh',['recharge_station.h',['../recharge__station_8h.html',1,'']]],
+  ['rechargestation',['RechargeStation',['../class_recharge_station.html',1,'']]],
+  ['registerrobot',['registerRobot',['../class_arena.html#a68f71da3b1d27640cf2debc258cafcc8',1,'Arena']]],
+  ['removerobot',['removeRobot',['../class_arena.html#a8fb740bba015cd1ead0b5d6065fd9d3a',1,'Arena']]],
+  ['reset',['Reset',['../class_arena.html#a6ac584696fcbfebe3c1073585489da27',1,'Arena::Reset()'],['../class_arena_entity.html#a1cb260385454b645bc78cb946bd1121a',1,'ArenaEntity::Reset()'],['../class_home_base.html#aa83361d73959934354be045518700b4f',1,'HomeBase::Reset()'],['../class_home_base_motion_handler.html#a1eae2e0d55ad2caf771478d9c155418f',1,'HomeBaseMotionHandler::Reset()'],['../class_motion_handler.html#acfd072d86c4f3113fbea0b630bdc5cc5',1,'MotionHandler::Reset()'],['../class_player.html#a159669caa4993e2cc4d56e895b6550e8',1,'Player::Reset()'],['../class_player_motion_handler.html#a070185f598df58d8709c0c9b254a65af',1,'PlayerMotionHandler::Reset()'],['../class_robot.html#a8a7ab36cb921f5cb9b17fc40e78610e0',1,'Robot::Reset()'],['../class_robot_battery.html#af9c73841506973f779a36a91d7ae7aed',1,'RobotBattery::Reset()'],['../class_robot_motion_handler.html#af4c7df1c5437c239859d05f851ef88ce',1,'RobotMotionHandler::Reset()'],['../class_sensor.html#a951148da5bc8a0245a3d118fa5909fc0',1,'Sensor::Reset()'],['../class_sensor_distress.html#a432e87b785d6dfd0360ed3175a9ad4e0',1,'SensorDistress::Reset()'],['../class_sensor_entity_type.html#ac64fe9b6d04a073946d58272cb027750',1,'SensorEntityType::Reset()'],['../class_sensor_proximity.html#ac4ae2f6eefd9571416eba610a367b74f',1,'SensorProximity::Reset()'],['../class_sensor_touch.html#a5537f62b93bdc021b29f8e1baf5f0a34',1,'SensorTouch::Reset()'],['../class_superbot.html#a292b1989c2fb5961a3dd6870190ea180',1,'Superbot::Reset()'],['../class_superbot_motion_handler.html#aa048d3349af293ae1ecd2a9363e105a5',1,'SuperbotMotionHandler::Reset()']]],
+  ['resetbattery',['ResetBattery',['../class_player.html#a2575658e3beff9e406a356616c0b28c0',1,'Player::ResetBattery()'],['../class_robot.html#a9e0bcc5a2597c6fb6cb2f0c740bac14c',1,'Robot::ResetBattery()'],['../class_superbot.html#ace311579bb481dee764d5ed2af754c0b',1,'Superbot::ResetBattery()']]],
+  ['robot',['Robot',['../class_robot.html',1,'Robot'],['../class_arena.html#a8ae7cc9bc2e43d887e0d47680e27db84',1,'Arena::robot()']]],
+  ['robot_2ecc',['robot.cc',['../robot_8cc.html',1,'']]],
+  ['robot_2eh',['robot.h',['../robot_8h.html',1,'']]],
+  ['robot_5fbattery_2ecc',['robot_battery.cc',['../robot__battery_8cc.html',1,'']]],
+  ['robot_5fbattery_2eh',['robot_battery.h',['../robot__battery_8h.html',1,'']]],
+  ['robot_5fmotion_5fbehavior_2ecc',['robot_motion_behavior.cc',['../robot__motion__behavior_8cc.html',1,'']]],
+  ['robot_5fmotion_5fbehavior_2eh',['robot_motion_behavior.h',['../robot__motion__behavior_8h.html',1,'']]],
+  ['robot_5fmotion_5fhandler_2ecc',['robot_motion_handler.cc',['../robot__motion__handler_8cc.html',1,'']]],
+  ['robot_5fparams',['robot_params',['../structrobot__params.html',1,'']]],
+  ['robot_5fparams_2eh',['robot_params.h',['../robot__params_8h.html',1,'']]],
+  ['robotbattery',['RobotBattery',['../class_robot_battery.html',1,'']]],
+  ['robotmotionbehavior',['RobotMotionBehavior',['../class_robot_motion_behavior.html',1,'']]],
+  ['robotmotionhandler',['RobotMotionHandler',['../class_robot_motion_handler.html',1,'']]],
+  ['robots',['robots',['../class_arena.html#a5b6dc9dac0518afe2541802ee77d4f6c',1,'Arena']]]
+];

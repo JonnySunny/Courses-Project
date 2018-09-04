@@ -1,0 +1,18 @@
+Add_Region Who_Won Region_1
+Add_Region Who_Won Region_2
+Add_Region Region_2 County_3
+Add_Region Region_1 County_2
+Add_Region Region_1 County_1
+Add_Region County_3 Subcounty_1
+Add_Region County_3 Subcounty_2
+Open_Polls Region_1
+Add_Votes County_1 County_1.votes
+Add_Votes County_2 County_2.votes
+Add_Votes Subcounty_1 Subcounty_1.votes 
+Open_Polls Who_Won
+Add_Votes County_3 County_3.votes
+Add_Votes Subcounty_1 Subcounty_1.votes
+Remove_Votes Subcounty_1 Subcounty_1_remove.votes
+Remove_Votes Subcounty_2 Subcounty_2_remove.votes
+Close_Polls Who_Won
+Return_Winner

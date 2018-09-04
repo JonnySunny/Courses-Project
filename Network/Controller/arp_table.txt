@@ -1,0 +1,88 @@
+
+(a)
+h1 arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.0.0.2                 ether   00:00:00:00:00:02   C                     h1-eth0
+10.0.0.6                 ether   00:00:00:00:00:06   C                     h1-eth0
+10.0.0.5                 ether   00:00:00:00:00:05   C                     h1-eth0
+10.0.0.3                 ether   00:00:00:00:00:03   C                     h1-eth0
+10.0.0.4                 ether   00:00:00:00:00:04   C                     h1-eth0
+
+h2 arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.0.0.1                 ether   00:00:00:00:00:01   C                     h2-eth0
+10.0.0.6                 ether   00:00:00:00:00:06   C                     h2-eth0
+10.0.0.5                 ether   00:00:00:00:00:05   C                     h2-eth0
+10.0.0.3                 ether   00:00:00:00:00:03   C                     h2-eth0
+10.0.0.4                 ether   00:00:00:00:00:04   C                     h2-eth0
+
+h3 arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.0.0.4                 ether   00:00:00:00:00:04   C                     h3-eth0
+10.0.0.1                 ether   00:00:00:00:00:01   C                     h3-eth0
+10.0.0.2                 ether   00:00:00:00:00:02   C                     h3-eth0
+10.0.0.6                 ether   00:00:00:00:00:06   C                     h3-eth0
+10.0.0.5                 ether   00:00:00:00:00:05   C                     h3-eth0
+
+h4 arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.0.0.6                 ether   00:00:00:00:00:06   C                     h4-eth0
+10.0.0.5                 ether   00:00:00:00:00:05   C                     h4-eth0
+10.0.0.3                 ether   00:00:00:00:00:03   C                     h4-eth0
+10.0.0.1                 ether   00:00:00:00:00:01   C                     h4-eth0
+10.0.0.2                 ether   00:00:00:00:00:02   C                     h4-eth0
+
+h5 arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.0.0.6                 ether   00:00:00:00:00:06   C                     h5-eth0
+10.0.0.1                 ether   00:00:00:00:00:01   C                     h5-eth0
+10.0.0.2                 ether   00:00:00:00:00:02   C                     h5-eth0
+10.0.0.4                 ether   00:00:00:00:00:04   C                     h5-eth0
+10.0.0.3                 ether   00:00:00:00:00:03   C                     h5-eth0
+
+h6 arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.0.0.4                 ether   00:00:00:00:00:04   C                     h6-eth0
+10.0.0.2                 ether   00:00:00:00:00:02   C                     h6-eth0
+10.0.0.1                 ether   00:00:00:00:00:01   C                     h6-eth0
+10.0.0.5                 ether   00:00:00:00:00:05   C                     h6-eth0
+10.0.0.3                 ether   00:00:00:00:00:03   C                     h6-eth0
+
+(b)
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+l1 l2 l3 s4 s5 
+*** Adding links:
+(l1, h1) (l1, h2) (l2, h3) (l2, h4) (l3, h5) (l3, h6) (s4, l1) (s4, l2) (s4, l3) (s5, l1) (s5, l2) (s5, l3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 5 switches
+l1 l2 l3 s4 s5 ...
+*** Starting CLI:
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+
+(c)
+mininet> link s4 l1 down
+mininet> link s4 l2 down
+mininet> link s4 l3 down
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+mininet> 

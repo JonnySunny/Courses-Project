@@ -1,0 +1,28 @@
+#
+#obstacle1
+obstacle 200 200 30.0 255 255 255 255
+#obstacle2
+obstacle 300 300 30.0 255 255 255 255
+#obstacle3
+obstacle 500 700 30.0 255 255 255 255
+#obstacle4
+obstacle 100 600 30.0 255 255 255 255
+#obstacle5
+obstacle 550 600 30.0 255 255 255 255
+#player
+player 500 500 20.0 100 10 1 0 0 255 255
+#homebase
+homebase 400 400 20.0 10 255 0 0 255
+#robot
+robot 300 100 20.0 10 0 0 255 255
+#robot
+robot 500 150 20.0 10 0 0 255 255
+#robot
+robot 500 200 20.0 10 0 0 255 255
+#robot
+robot 500 250 20.0 10 0 0 255 255
+#robot
+robot 500 350 20.0 10 0 0 255 255
+#rechargestation
+recharge_station 500 300 20.0 0 128 128 255
+

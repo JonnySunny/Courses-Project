@@ -1,0 +1,64 @@
+Zhongyi Sun
+ID 5320262
+x500: sunx0725
+ andl (t::f::t::t::[])
+
+————————————————
+call by value
+  andl (t::f::t::t::[])
+= foldl and true (t::f::t::t::[])
+= foldl and (and true true) (f::t::t::[])
+= foldl and (true) (f::t::t::[])
+= foldl and (and true false) (t::t::[])
+= foldl and (false) (t::t::[])
+= foldl and (and false true) (t::[])
+= foldl and (false) (t::[])
+= foldl and (and false true) []
+= foldl and (false) []
+= false
+
+————————————————
+
+call by name 
+
+  andl (t::f::t::t::[])
+= foldl and true (t::f::t::t::[])
+= foldl and (and true true) (f::t::t::[])
+= foldl and (and (and (true true)) false) (t::t::[])
+= foldl and (and (and (and (true true)) false) true ) (t::[])
+= foldl and (and (and (and (and (true true)) false) true ) true) ([])
+= (and (and (and (and (true true)) false) true ) true)
+= (and (and (and (true) false) true ) true)
+= (and (and (false) true ) true)
+= (and false true)
+= false
+
+
+—————————————————————
+andr (t::f::t::t::[])
+
+call by value
+  andr (t::f::t::t::[])
+= foldr and (t::f::t::t::[]) true
+= and true (foldr and (f::t::t::[]) true)
+= and true (and false (foldr and (t::t::[]) true))
+= and true (and false (and true (foldr and (t::[]) true)))
+= and true (and false (and true (and true (foldr and ([]) true)))
+= and true (and false (and true (and true true))
+= and true (and false (and true true)
+= and true (and false true)
+= and true false
+= false
+
+
+call by name
+  andr (t::f::t::t::[])
+= foldr and (t::f::t::t::[]) true
+= and true (foldr and (f::t::t::[]) true)
+= foldr and (f::t::t::[]) true
+= and false (foldr and (t::t::[]) true)
+= false
+
+
+
+I think call by name in the andr part is most efficient. Because it call “and” every step, that it’s not required to compute all values if there is false values before the last element. It’ll stop once it detects a false value. Therefore this noe is most efficient.

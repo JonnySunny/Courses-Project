@@ -1,0 +1,68 @@
+﻿/**************************************
+sunx0725, sunx0458
+Feb 21 2018
+Zhongyi Sun, Connor C Sun
+5320262 , 5116486
+***************************************/
+
+
+Purpose of the program:
+----------------------------------------
+This is a vote counter program, which would count and find the winner from multiple different input files. The processing like a tree, it would run the leaf nodes first, then take the outputs from the leaf nodes as input for the next level nodes, and so on. Until the root node. 
+
+
+Compile program from the terminal
+----------------------------------------
+$make
+Since there's a makefile, so we can just call make in the terminal. it will compile the codes. 
+
+
+Calling program from the terminal
+-----------------------------------------
+$./votecounter input.txt
+to use this program, typing: "./votecounter input.txt" in the terminal.
+
+
+How does it works
+-----------------------------------------
+First of all, brings the input file into the program. It prints error if it didn’t include the input file
+Otherwise builds a pointer to struct nodes first, and brings it into parseInput function, which returns a integer for of the notes. It also assigns the nodes with all the value given from the input file. Then prints the number of the nodes. After that, it goes for a error handle to check if there is a circle in the nodes’ relationships. If there’s a circle, it prints the node name, and stops the program. Otherwise, it calls execNodes, which takes the nodes in there. For the leaf-nodes, it runs the execv calling the leafcounter. For the non-leaf-nodes, it calls number of the children times fork, the children of the forks recall the execNode again, and the parents of the forks wait to call aggrativecounter or findwinner, until all the children forks done. 
+We also built the error handling, such as, missing input file, empty lines in input file, incorrect number of the candidates, and so on.  
+
+
+Description of the functions
+-----------------------------------------
+1. Function : parseInput,
+  Arguments: 'filename' - name of the input fil 'n' - Pointer to Nodes to be allocated by parsing
+ Output: Number of Total Allocated Nodes  
+It opens the Input File if is exists, then read it line by line by calling parseInputLine(..) on each one of these lines. In the end, sssign node->"prog" ie, the commands that each of the nodes has to execute.
+
+
+ 2. Function : parseInputLine
+ Arguments: 's' - Line to be parsed ;'n' - Pointer to Nodes to be allocated by parsing
+  Output: Number of Region Nodes allocated
+ It splits the Input file, store the candidates’ information and then recognize the specific line by “:” and other information, such as “Who_Won” , then using makeargv() to parse related data to   itself. And it also handles many error which may occur in the file, such as wrong candidates number, wrong format in the line, and so on. 
+
+
+3. Function : execNodes
+Arguments: 'n' - Pointer to Nodes to be allocated by parsing
+It recursively calls each leaf node or non leaf node to get the winner from those files by using fork() and wait().
+
+
+4. Function: find_circle
+Arguments: 'n' - Pointer to Nodes to be allocated by parsing
+It recursively calls each node, and if there is a circle, exit the program.
+
+
+Contributions
+------------------------------------------
+ZhongYi's(5320262) :
+parseInput
+parseInputLine
+
+
+
+
+Connor's(5116486):
+find_circle
+execNodes

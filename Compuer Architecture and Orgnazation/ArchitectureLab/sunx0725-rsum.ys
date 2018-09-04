@@ -1,0 +1,38 @@
+#Zhongyi Sun Sunx0725 5320262
+
+
+# Execution begins at address 0
+	.pos 	0
+	irmovq 	Stack, %rsp  #stack 	
+	call	Main
+	halt
+
+# Sample linked list
+.align 8
+ele1:
+	.quad 0xa00
+	.quad ele2
+ele2:
+	.quad 0x0b0
+	.quad ele3
+ele3:
+	.quad 0x00c
+	.quad 0
+Main:	
+	irmovq	ele1, %rdi
+	xorq	%rax, %rax   #initial returnvalue = 0
+	call 	rsum_list
+	ret
+rsum_list:
+	andq	%rdi, %rdi
+	je		end
+	mrmovq	(%rdi), %rbx
+	mrmovq	8(%rdi), %rdi
+	addq	%rbx, %rax
+	call 	rsum_list
+	
+end:
+
+	ret
+	.pos 0x100
+Stack:

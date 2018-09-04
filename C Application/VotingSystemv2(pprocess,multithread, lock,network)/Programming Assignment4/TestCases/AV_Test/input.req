@@ -1,0 +1,17 @@
+Add_Region Who_Won Region_1
+Add_Region Who_Won Region_2
+Add_Region Region_2 County_2
+Add_Region Region_2 County_3
+Add_Region Region_1 County_1
+Add_Region County_2 Town_1
+Add_Votes Region_1 a.votes
+Add_Votes Who_Won a.votes
+Add_Votes County_88 a.votes
+Add_Votes Town_1 a.votes
+Open_Polls Who_Won
+Add_Votes Town_1 a.votes
+Add_Votes County_2 b.votes
+Close_Polls Who_Won
+Add_Votes County_1 a.votes
+Count_Votes Who_Won
+Return_Winner
